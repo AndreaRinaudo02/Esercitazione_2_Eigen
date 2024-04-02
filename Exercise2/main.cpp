@@ -30,10 +30,10 @@ int main()
         8.320502943378437e-01, -8.324762492991313e-01;
     b2 << -6.394645785530173e-04, 4.259549612877223e-04;
 
-    Vector2d x2_PALU = A2.partialPivLu().solve(b2);            // risolve il primo sistema con la decomposizione PALU
+    Vector2d x2_PALU = A2.partialPivLu().solve(b2);            // risolve il secondo sistema con la decomposizione PALU
     double errore_relativo_2_PALU = (x2_PALU - soluzione).norm() / soluzione.norm();       // calcola l'errore relativo per la decomposizione PALU
 
-    Vector2d x2_QR = A2.householderQr().solve(b2);             // risolve il primo sistema con la decomposizione QR
+    Vector2d x2_QR = A2.householderQr().solve(b2);             // risolve il secondo sistema con la decomposizione QR
     double errore_relativo_2_QR = (x2_QR - soluzione).norm() / soluzione.norm();           // calcola l'errore relativo per la decomposizione QR
 
 
@@ -44,10 +44,10 @@ int main()
         8.320502943378437e-01, -8.320502947645361e-01;
     b3 << -6.400391328043042e-10, 4.266924591433963e-10;
 
-    Vector2d x3_PALU = A3.partialPivLu().solve(b3);           // risolve il primo sistema con la decomposizione PALU
+    Vector2d x3_PALU = A3.partialPivLu().solve(b3);           // risolve il terzo sistema con la decomposizione PALU
     double errore_relativo_3_PALU = (x3_PALU - soluzione).norm() / soluzione.norm();      // calcola l'errore relativo per la decomposizione PALU
 
-    Vector2d x3_QR = A3.householderQr().solve(b3);            // risolve il primo sistema con la decomposizione QR
+    Vector2d x3_QR = A3.householderQr().solve(b3);            // risolve il terzo sistema con la decomposizione QR
     double errore_relativo_3_QR = (x3_QR - soluzione).norm() / soluzione.norm();          // calcola l'errore relativo per la decomposizione QR
 
 
